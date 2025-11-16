@@ -18,6 +18,10 @@ type Artist struct {
 
 	// Struct to store the fetched data from the API URLs
 	Locations Location
-	Dates Date 
-	Relations Relation 
+	Dates     Date
+	Relations Relation
+
+	// Extra variables for home page design
+	MemberCount int
+	LastConcert string
 }
