@@ -3,7 +3,7 @@ package models
 // The API LINK: https://groupietrackers.herokuapp.com/api/artists
 
 type Artist struct {
-	// Converting json --> go varibles
+	// Converting json --> go variables
 	ID           int      `json:"id"`
 	Image        string   `json:"image"`
 	Name         string   `json:"name"`
