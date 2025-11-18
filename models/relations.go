@@ -1,6 +1,6 @@
 package models
 
-// The API LINK: https://groupietrackers.herokuapp.com/api/relations
+// The API LINK: https://groupietrackers.herokuapp.com/api/relation
 
 type Relation struct {
 	// Converting json --> go variables

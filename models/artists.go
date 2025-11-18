@@ -11,16 +11,6 @@ type Artist struct {
 	CreationDate int      `json:"creationDate"`
 	FirstAlbum   string   `json:"firstAlbum"`
 
-	// Converting json --> go url links (API)
-	LocationsURL   string `json:"locations"`
-	ConcertDateURL string `json:"concertDates"`
-	RelationsURL   string `json:"relations"`
-
-	// Struct to store the fetched data from the API URLs
-	Locations Location
-	Dates     Date
-	Relations Relation
-
 	// Extra variables for home page design
 	MemberCount int
 	LastConcert string
