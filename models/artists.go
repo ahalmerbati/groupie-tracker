@@ -11,6 +11,9 @@ type Artist struct {
 	CreationDate int      `json:"creationDate"`
 	FirstAlbum   string   `json:"firstAlbum"`
 
+	// Struct to store the fetched data
+	Relations Relation
+
 	// Extra variables for home page design
 	MemberCount int
 	LastConcert string
