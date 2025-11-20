@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Name}} | Artist Details</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/band.css">
+</head>
+
+<body>
+
+    <video autoplay muted loop id="bg-video">
+        <source src="/static/video/backgroundvideo.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <header class="bar">
+        <h1>🎶 Artist Catalog 🎶</h1>
+        <button class="home-btn" onclick="window.location.href='/'">Home</button>
+    </header>
+
+
+    <main class="band-container">
+        <div class="band-header">
+            <div class="band-image-wrapper">
+                <img src="{{.Image}}" alt="{{.Name}} Logo">
+            </div>
+            <h2 class="band-name">{{.Name}}</h2>
+        </div>
+
+        <div class="band-content-grid">
+            
+            <div class="band-section general-info-section">
+                <h3 class="section-title">🌟 General Information</h3>
+                <div class="info-item">
+                    <strong>Creation Date:</strong> <span>{{.CreationDate}}</span>
+                </div>
+                <div class="info-item">
+                    <strong>First Album:</strong> <span>{{.FirstAlbum}}</span>
+                </div>
+            </div>
+
+            <div class="band-section members-section">
+                <h3 class="section-title">👥 Members</h3>
+                <ul>
+                    {{range .Members}}
+                    <li>{{.}}</li>
+                    {{end}}
+                </ul>
+            </div>
+
+            <div class="band-section concert-section full-width">
+    <h3 class="section-title">🗓️ Concert Dates & Locations</h3>
+    <ul class="concert-list">
+        {{range $location, $dates := .DatesLocations}}
+        <li class="location-item">
+            <span class="location-name">{{$location}}</span>: 
+            <span class="concert-dates">{{range $dates}}{{.}}, {{end}}</span>
+        </li>
+        {{else}}
+            <li class="no-concerts">No upcoming locations are currently available.</li>
+        {{end}}
+    </ul>
+</div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Groupie Tracker 🎧 | Made by Jaber and Ahmed</p>
+    </footer>
+
+</body>
+</html>
