@@ -53,7 +53,7 @@
             <div class="band-section concert-section full-width">
     <h3 class="section-title">🗓️ Concert Dates & Locations</h3>
     <ul class="concert-list">
-        {{range $location, $dates := .DatesLocations}}
+        {{range $location, $dates := .Relations.DatesLocations}}
         <li class="location-item">
             <span class="location-name">{{$location}}</span>: 
             <span class="concert-dates">{{range $dates}}{{.}}, {{end}}</span>
