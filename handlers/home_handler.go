@@ -12,6 +12,11 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if r.Method != http.MethodGet {
+		ErrorHandler(w, r, http.StatusMethodNotAllowed)
+		return
+	}
+
 	artists, err := processor.ProcessData()
 	if err != nil {
 		log.Printf("Data processing error: %v", err)
@@ -19,4 +24,5 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	renderTemplate(w, r, "home.html", artists)
 }
