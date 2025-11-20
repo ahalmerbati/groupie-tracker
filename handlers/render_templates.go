@@ -13,7 +13,8 @@ func renderErrorTemplate(w http.ResponseWriter, code int, data models.ErrorData)
 
 	t, err := template.ParseFiles(templatePath)
 	if err != nil {
-		log.Printf("Error: Cannot parse error template %s: %v", templatePath, err)
+		log.Fatalf("Error: Cannot parse required error template %s: %v", templatePath, err)
+		
 		// If the Error template is not parsing this is the fallback (calling the http.error method)
 		http.Error(w, fmt.Sprintf("%d %s", code, data.StatusText), code)
 		return
@@ -38,7 +39,7 @@ func renderTemplate(w http.ResponseWriter, r *http.Request, tmpl string, data in
 	err = t.Execute(w, data)
 	if err != nil {
 		log.Printf("Error executing template %s: %v", tmpl, err)
-		ErrorHandler(w, nil, http.StatusInternalServerError)
+		ErrorHandler(w, r, http.StatusInternalServerError)
 		return
 	}
 }
