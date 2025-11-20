@@ -11,6 +11,9 @@ type Artist struct {
 	CreationDate int      `json:"creationDate"`
 	FirstAlbum   string   `json:"firstAlbum"`
 
+	// URL Path to Relations
+	RelationsURL string `json:"relations"`
+	
 	// Struct to store the fetched data
 	Relations Relation
 
