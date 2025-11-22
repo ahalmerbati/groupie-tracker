@@ -24,7 +24,8 @@
             {{range .}}
             <div class="band-card" onclick="location.href='/band/{{.ID}}'">
                 <div class="band-image">
-                    <img src="{{.Image}}" alt="{{.Name}} Logo">
+                    <img src="{{.Image}}" alt="{{.Name}} Logo"
+                    {{if eq .ID 21}}style="filter: blur(20px); -webkit-filter: blur(20px);"{{end}}>
                 </div>
                 <div class="band-info">
                     <h2>{{.Name}}</h2>
