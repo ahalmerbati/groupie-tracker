@@ -43,7 +43,6 @@ body {
     color: #E5E7EB;
     background-color: #0c0a18;
 
-     /*  what do they do */
     display: flex;               
     flex-direction: column;
     min-height: 100vh;
@@ -57,36 +56,31 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    /* Same background and effects */
     background: rgba(17, 24, 39, 0.85); 
     backdrop-filter: blur(8px);
     color: #fff;
     text-align: center;
     z-index: 10;
     box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    
-    /* Bigger Padding (Height) for the initial state */
     padding: 20px 0; 
-    /* Add transition for smooth resizing */
+
     transition: all 0.3s ease-in-out;
     
-    /* Keep animation for first load */
     animation: slideDown 1s ease;
 }
 
 .bar h1 {
     font-family: 'Poppins', sans-serif;
-    /* Bigger font size for the initial state */
     font-size: 36px; 
-    font-weight: 700; /* Made it bolder */
+    font-weight: 700; 
     color: #fff;
     margin: 0; 
     padding: 0;
     text-shadow: none;
-    /* Add transition for smooth font resizing */
     transition: font-size 0.3s ease-in-out, font-weight 0.3s ease-in-out;
 }
 
@@ -118,9 +112,9 @@ footer {
     }
 
     .home-btn {
-        padding: 8px 16px; /* Smaller padding */
-        font-size: 16px;   /* Smaller text */
-        top: 10px;         /* Adjust position to align with new bar height */
+        padding: 8px 16px; 
+        font-size: 16px;  
+        top: 10px;         
         left: 15px;
     }
 }

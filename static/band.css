@@ -185,14 +185,13 @@
         font-size: 20px;
     }
 }
-/* 2. Mobile View (Transform into a "Bar" under the title) */
+
 @media (max-width: 350px) {
     .bar {
-        /* Allow the header to grow tall enough to fit title + button */
-        height: auto;
-        padding-bottom: 15px; /* Add space at the bottom */
         
-        /* Use Flexbox to stack them neatly */
+        height: auto;
+        padding-bottom: 15px;
+    
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -200,30 +199,29 @@
     }
 
     .bar h1 {
-        /* Add a little space between title and button */
         margin-bottom: 12px;
         padding: 5px 0 0 0;
     }
 
     .home-btn {
-        /* CRITICAL: Remove absolute positioning so it flows naturally */
+        
         position: relative;
         top: auto;
         left: auto;
 
-        /* Make it look like a bar */
+        
         display: block;
-        width: 85%;          /* Wide, but not touching edges */
-        max-width: 300px;    /* Don't let it get too wide on larger phones */
-        margin: 0 auto;      /* Center it completely */
+        width: 85%;          
+        max-width: 300px;    
+        margin: 0 auto;      
         text-align: center;
         
-        /* Visual tweaks for the bar look */
-        background: rgba(31, 62, 134, 0.8); /* Slightly transparent to match theme */
+        
+        background: rgba(31, 62, 134, 0.8); 
         border: 1px solid rgba(255, 255, 255, 0.2);
     }
     
-    /* Optional: Make it brighter when touched on mobile */
+    
     .home-btn:active {
         background: #3B82F6;
         transform: scale(0.98);
