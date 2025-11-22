@@ -3,13 +3,21 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start; /* Aligns content to the top, not center */
+            padding: 30px 10px 10px 10px !important; 
+            max-width: 1200px;
+            background-color: rgba(23, 30, 46, 0.9) !important;
         }
 
         
         .error-container {
-            text-align: center;
-            padding: 40px 20px;
-            margin: 125px auto 40px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0; 
         }
 
 
