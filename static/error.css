@@ -122,6 +122,14 @@
     }
 
     .error-page-main {
-        margin-top: 120px!important;
+        /* On very small screens, move it up significantly */
+        margin: 120px auto 10px auto !important;
+        
+        /* FIX: Change max-width from 90% to a calc() function. 
+           This ensures that even with 10px of padding on the left and right (total 20px), 
+           the container never exceeds 100% of the screen width. */
+        max-width: calc(100vw - 40px); 
+        width: 100%; /* Ensure it uses the full constrained width */
+        padding: 15px 10px !important; /* Slightly reduce padding if necessary */
     }
 }
